@@ -2,12 +2,12 @@ import os
 import telebot
 from telebot import types
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-ADMIN_ID_RAW = os.getenv("ADMIN_ID", "0")
-CHANNEL_URL = os.getenv("CHANNEL_URL", "https://t.me/NFT_SAVDOSI_CHATI")
-CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "@NFT_SAVDOSI_CHATI")
-REQUIRED_INVITES = int(os.getenv("REQUIRED_INVITES", "30"))
-REWARD_STARS = int(os.getenv("REWARD_STARS", "500"))
+BOT_TOKEN = (os.getenv("BOT_TOKEN") or "").strip()
+ADMIN_ID_RAW = (os.getenv("ADMIN_ID") or "0").strip()
+CHANNEL_URL = (os.getenv("CHANNEL_URL") or "https://t.me/NFT_SAVDOSI_CHATI").strip()
+CHANNEL_USERNAME = (os.getenv("CHANNEL_USERNAME") or "@NFT_SAVDOSI_CHATI").strip()
+REQUIRED_INVITES = int((os.getenv("REQUIRED_INVITES") or "30").strip())
+REWARD_STARS = int((os.getenv("REWARD_STARS") or "500").strip())
 
 if not BOT_TOKEN:
     raise ValueError("BOT_TOKEN topilmadi! Render Environment Variables ni tekshiring.")
